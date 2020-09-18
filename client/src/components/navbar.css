@@ -1,0 +1,47 @@
+.gNavBar {
+    background-color:rgb(0, 157, 255);
+    color:white;
+    width:100%;
+    box-sizing: border-box;
+    height:70px;
+    overflow: hidden;
+}
+
+.logo {
+    padding-left:20px;
+    color:white;
+    font-weight: 900;
+    padding-top:20px;
+    box-sizing: border-box;
+    font-size:24px;
+    display:inline-block;
+    padding-right:20px;
+}
+.navlinks {
+    margin:0;
+    display:inline-block;
+    float:right;
+    text-align:right;
+    box-sizing: border-box;
+    height:70px;
+   
+}
+
+.navLinker {
+    margin:0;
+    display:inline-block;
+    padding:30px;
+    height:70px;
+    padding-left:34px;
+    padding-right:34px;
+    line-height:1em;
+    float:right;
+    font-weight: 900;
+    color:white;
+    background-color:rgba(32, 57, 112,.5);
+}
+
+.navLinker:hover {
+    background-color:rgb(16, 28, 56);
+    
+}
