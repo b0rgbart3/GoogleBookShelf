@@ -13,6 +13,12 @@
     border-radius:20px;
     margin-top:20px;
     user-select: none;
+    background-image:url('../images/atdesk.gif');
+    color:white;
+    text-shadow:0 0 8px black;
+    height:500px;
+    background-position:50% 50%;
+    background-size:100%;
 }
 .gJumboTron h1 {
     letter-spacing:-.04em;
