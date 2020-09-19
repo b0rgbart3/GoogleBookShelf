@@ -14,9 +14,9 @@ function Navbar() {
 
     {/* to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"} */}
     <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"} >
-      <li className="navLinker"> Search</li></Link>
+      <li className="navLinker"> Find Books</li></Link>
     <Link to="/saved" className={location.pathname === "/saved" ? "nav-link active" : "nav-link"}>
-      <li className="navLinker">Saved</li></Link>
+      <li className="navLinker">View My Colleciton</li></Link>
  
 
 

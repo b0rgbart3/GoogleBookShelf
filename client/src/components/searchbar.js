@@ -8,7 +8,8 @@ const Styles = {
   search: {
     borderRadius: "90px",
     fontSize: "30px",
-    fontWeight: "600"
+    fontWeight: "600",
+
   },
   text:{ 
       fontWeight: 900
@@ -17,10 +18,17 @@ const Styles = {
 };
 
 
+
 function SearchBar() {
   const [state,dispatch] = useBookContext();
 
   const searchRef = useRef();
+
+
+  function clearField() {
+  
+    searchRef.current.value = "";
+  }
 
   function handleOnSubmit(e) {
     e.preventDefault();
@@ -41,23 +49,32 @@ function SearchBar() {
    
       <div className="card searchCard">
 
-          <h3 className="">Search for a book</h3>
-        <nav className="white z-depth-2" style={Styles.search}>
-          <div
+          <h3 className="">Search for a book:</h3>
+        {/* <nav className="white z-depth-2" style={Styles.search}> */}
+          {/* <div
             className="nav-wrapper blue lighten z-depth-0"
             style={Styles.search}
-          >
+          > */}
             <form onSubmit={handleOnSubmit}>
-              <div className="input-field z-depth-0" style={Styles.search}>
+              {/* <div className="input-field z-depth-0 inputDiv" style={Styles.search}>
                 <input id="search" type="search" style={Styles.search} ref={searchRef}></input>
                 <label className="label-icon">
                   <i className="material-icons">search</i>
                 </label>
-                <i className="material-icons">close</i>
+                <i className="material-icons" onClick={clearField}>close</i>
+                
+              </div>
+<br></br> */}
+              <div>
+                <div className='myInputField'><input className='gbSearch' ref={searchRef} />
+                <br></br><i className="material-icons mGlass">search</i>
+                <i className="material-icons myCloser" onClick={clearField}>close</i></div>
+                <button type='submit' className="startSearch">SEARCH</button>
+               
               </div>
             </form>
-          </div>
-        </nav>
+          {/* </div> */}
+        {/* </nav> */}
       </div>
    
   );

@@ -6,6 +6,7 @@ function Jumbotron() {
       <div className="gJumboTron">
           <h1>Google Books Search</h1>
           <h2>Search and Save Books of Interest</h2>
+          <div className='credit'>illustration: minear.tumblr.com</div>
         </div>
       
   );

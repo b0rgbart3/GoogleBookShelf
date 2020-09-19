@@ -7,4 +7,89 @@
     padding-bottom:20px;
     padding-top:10px;
     user-select: none;
+    letter-spacing: -.08em;
+    width:95%;
+    margin:auto;
+    margin-top:20px;
+}
+
+.inputDiv {
+
+
+}
+
+input.gbSearch {
+    width:100%;
+    box-sizing: border-box;
+    background-color:white;
+    border-radius:30px;
+    border:2px solid white;
+    padding-left:50px;
+    font-size:30px;
+    padding-top:12px;
+    padding-bottom:12px;
+    height:60px;
+    position: relative;
+    vertical-align: top;
+}
+
+.mGlass {
+    position: relative;
+    top:-54px;
+    left:18px;
+    font-size:32px;
+}
+
+.myCloser {
+    position: relative;
+    right:20px;
+    font-size:30px;
+    top: -50px;
+    float:right;
+    font-weight: 700;
+    color:rgb(225, 225, 225);
+    cursor: pointer;
+}
+
+.myCloser:hover {
+    color:black;
+}
+.startSearch {
+    padding:20px;
+    border:none;
+    border-radius:30px;
+    background-color:rgb(0, 59, 147);
+    color:white;
+    text-transform:uppercase;
+    width:20%;
+    box-sizing: border-box;
+    height:60px;
+    padding:10px;
+    font-size:20px;
+    font-weight: 600;
+    user-select: none;
+    cursor: pointer;
+    min-width:190px;
+    margin-top:0;
+    /* box-shadow:0 0 8px rgb(4, 26, 97); */
+}
+
+.startSearch:hover {
+    background-color:rgb(0, 59, 147);
+    background-color:rgb(16, 28, 56);
+
+}
+
+.myInputField {
+    display:inline-block;
+    float:left;
+    width:70%;
+    box-sizing: border-box;
+    height:76px;
+    overflow: hidden;
+    margin-right:24px;
+}
+
+.startSearch:visited, .startSearch:active, .startSearch:focus {
+    background-color:rgb(0, 59, 147);
 }

@@ -3,7 +3,7 @@
     color:white;
     box-sizing: border-box;
     overflow: hidden;
-  
+    box-shadow:0 4px 14px black;
 }
 
 .logo {

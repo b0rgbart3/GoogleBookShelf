@@ -1,6 +1,6 @@
 .foundBook {
     border:2px solid rgb(0, 102, 255);
-    margin:20px;
+    margin:10px;
     box-sizing: border-box;
     padding:10px;
     border-radius:20px;
@@ -8,20 +8,20 @@
 }
 
 .bookImage {
-    border:2px solid red;
     display:block;
     float:none;
     box-sizing: border-box;
-    width:100%;
+    width:90%;
     padding:10px;
 }
 
 .bookImage img {
     width:80%;
+    box-shadow:4px 4px 12px gray;
 }
 
 .bookInfo {
-    border:2px solid orange;
+   
     display: block;
     float:none;
     box-sizing: border-box;
@@ -29,11 +29,22 @@
     padding:10px;
 }
 
+.bookInfo h2 {
+    font-size:30px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+}
+
+.resultsDiv {
+    width:80%;
+    margin:auto;
+}
+
 
 @media only screen and (min-width: 800px) {
 
     .bookImage {
-        border:2px solid red;
+       
         display:inline-block;
         float:left;
         box-sizing: border-box;
@@ -48,7 +59,7 @@
     }
     
     .bookInfo {
-        border:2px solid orange;
+     
         display:inline-block;
         float:left;
         box-sizing: border-box;

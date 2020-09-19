@@ -14,7 +14,7 @@ function ResultsList() {
   }
 
   return (
-    <div>
+    <div className='resultsDiv'>
       {state.searchResults ? (
         state.searchResults.map((book, index) => (
           <li key={book.id}>
