@@ -19,6 +19,20 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
 
+// Sample Code for connecting directly
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = "mongodb+srv://<user>:<password>@cluster0.ifyh6.mongodb.net/GoogleBookShelf?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   console.log("Was able to connect.");
+//   console.log("IF there was an error it was this: ", err);
+//   client.close();
+// });
+
+
+
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });

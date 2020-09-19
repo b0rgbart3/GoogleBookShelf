@@ -9,7 +9,7 @@ function Navbar() {
   return (
 
   <div className="gNavBar group">
-    <Link to="/"><div className='logo'>My Google Books</div></Link>
+    <Link to="/"><div className='logo'>My Google Book Shelf</div></Link>
     <ul className="navlinks group">
 
     {/* to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"} */}
