@@ -4,14 +4,7 @@ import { useBookContext } from "../utils/GlobalState";
 import API from "../utils/API";
 import { GET_ALL_BOOKS, DELETE_BOOK } from "../utils/actions";
 
-const Styles = {
-    // nav: {
-    //     fontWeight: 900,
-    //     fontSize: "26px"
-    // }
-
-
-}
+import "./saved.css";
 
 function Saved() {
     const [state, dispatch] = useBookContext();
@@ -32,30 +25,34 @@ function Saved() {
       }
 
     return (
-        <div className="container" style={{backgroundColor:"#ffffff", padding:"10px"}}>
+        <div className="savedBooks group">
             {
                 state.savedBooks ?
                 state.savedBooks.map(book => {
                 return (
-                    <div className="collection-item" key={book._id}>
+                    <div className="savedBook group" key={book._id}>
                  
-                    <p>{book.title}</p>
-                    <p>{book.description}</p>
-
-                    { (book.image!="") && (book.image != undefined) ? 
+                 <div class='savedBookImage'>
+                 { (book.image!="") && (book.image != undefined) ? 
                     <img src={book.image} /> : <p>No image stored.</p> }
 
-               
-
-                        <button onClick={()=>removeBook( book._id )}>
+               </div>
+                 <div class='savedBookInfo group'>
+                    <h2>{book.title}</h2>
+                    <p>{book.description}</p>
+                    <button onClick={()=>removeBook( book._id )}>
                         Remove Book</button>
+                </div>
+                  
+
+                  
                    
                 </div>)
             })
             :
             <div></div>
             }
-       
+            <br></br>
         </div>
     );
 
