@@ -1,9 +1,9 @@
 import React from "react";
-const Styles = {
-  footer: {
-    marginTop: "800px",
-  },
-};
+// const Styles = {
+//   footer: {
+//     marginTop: "800px",
+//   },
+// };
 
 function Footer() {
   return (

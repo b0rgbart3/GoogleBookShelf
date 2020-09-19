@@ -1,6 +1,6 @@
 import React from "react";
 import { useBookContext } from "../utils/GlobalState";
-import { STATES } from "mongoose";
+//import { STATES } from "mongoose";
 import { SAVE_BOOK } from "../utils/actions";
 import API from "../utils/API";
 import "./result.css";
@@ -13,28 +13,46 @@ function ResultsList() {
     API.saveBook(volumeInfo);
   }
 
+  // Return a shorter textString - but don't split words
+  function shorten(textString, desiredLength) {
+    if (!textString || textString.length < desiredLength) {
+      return textString;
+    }
+    let split = textString.split(" ");
+    let shortString = ''; 
+    let splitNumber = 0;
+    while( shortString.length < desiredLength  && (splitNumber < split.length)) {
+      shortString += split[splitNumber] + " ";
+      splitNumber++;
+    }
+    return shortString; 
+  }
+
   return (
     <div className='resultsDiv'>
       {state.searchResults ? (
         state.searchResults.map((book, index) => (
           <li key={book.id}>
             <div className="foundBook group">
-
+          <a href={ book.volumeInfo.previewLink } >
               <div className='bookImage'>
                 {book.volumeInfo.imageLinks ? (
-                  <img src={book.volumeInfo.imageLinks.thumbnail} />
+                  <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.id} />
                 ) : (
                   "noimage"
                 )}
-              </div>
+              </div></a>
 
               <div className='bookInfo'>
-                <h2>{book.volumeInfo.title}</h2>
-                <p>{book.volumeInfo.description}</p>
+                <h2>{ shorten(book.volumeInfo.title, 30) }</h2>
+                <h3>{ book.volumeInfo.subtitle} </h3>
+                <h4>Author: { book.volumeInfo.authors[0] }</h4>
+                <p>{ shorten(book.volumeInfo.description, 260) }</p>
+                <button onClick={() => saveBook(book.volumeInfo)} className="save"> Save </button>
               </div>
 
 
-              <button onClick={() => saveBook(book.volumeInfo)}> Save </button>
+             
             </div>
           </li>
         ))

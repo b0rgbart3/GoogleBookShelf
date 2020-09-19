@@ -46,7 +46,7 @@ const reducer = (state, action) => {
 
       return {...state, savedBooks: state.savedBooks.filter((book)=>{
          
-          return book._id != action.id 
+          return book._id !== action.id 
       }) };
 
     case SEARCH_RESULTS:

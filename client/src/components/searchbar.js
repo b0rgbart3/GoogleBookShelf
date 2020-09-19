@@ -4,18 +4,18 @@ import { useBookContext } from "../utils/GlobalState";
 import { SEARCH_RESULTS } from "../utils/actions";
 import "./searchbar.css";
 
-const Styles = {
-  search: {
-    borderRadius: "90px",
-    fontSize: "30px",
-    fontWeight: "600",
+// const Styles = {
+//   search: {
+//     borderRadius: "90px",
+//     fontSize: "30px",
+//     fontWeight: "600",
 
-  },
-  text:{ 
-      fontWeight: 900
-    }
+//   },
+//   text:{ 
+//       fontWeight: 900
+//     }
 
-};
+// };
 
 
 
