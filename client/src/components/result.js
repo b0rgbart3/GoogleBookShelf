@@ -3,71 +3,45 @@ import { useBookContext } from "../utils/GlobalState";
 import { STATES } from "mongoose";
 import { SAVE_BOOK } from "../utils/actions";
 import API from "../utils/API";
-
+import "./result.css";
 
 function ResultsList() {
-  const [state, dispatch]= useBookContext();
-
+  const [state, dispatch] = useBookContext();
 
   function saveBook(volumeInfo) {
-
-      dispatch({ type: SAVE_BOOK, book: volumeInfo });
-
-
-      API.saveBook( volumeInfo );
-
-
-
+    dispatch({ type: SAVE_BOOK, book: volumeInfo });
+    API.saveBook(volumeInfo);
   }
-  
-
-
-
-  console.log("Our current state object: " + JSON.stringify(state));
 
   return (
     <div>
-    
-        <ul className="collection with-header">
-            
-              
+      {state.searchResults ? (
+        state.searchResults.map((book, index) => (
+          <li key={book.id}>
+            <div className="foundBook group">
 
-{
+              <div className='bookImage'>
+                {book.volumeInfo.imageLinks ? (
+                  <img src={book.volumeInfo.imageLinks.thumbnail} />
+                ) : (
+                  "noimage"
+                )}
+              </div>
 
-        state.searchResults ? 
-state.searchResults.map( (book,index) => 
-
- <li key={book.id}>
-   <div className="collection-item">
-   <h2>
-   { book.volumeInfo.title }</h2>
-   <p>
-   { book.volumeInfo.description }</p>
-
-   <p>{
-     
-      book.volumeInfo.imageLinks ?
-      <img src={book.volumeInfo.imageLinks.thumbnail} />
-      : "noimage"
-      
-      }</p>
+              <div className='bookInfo'>
+                <h2>{book.volumeInfo.title}</h2>
+                <p>{book.volumeInfo.description}</p>
+              </div>
 
 
-      <button onClick={()=>saveBook(book.volumeInfo)} > Save </button>
-
-  </div>
- </li>
-
-)
-: <li></li>
-        
-}
-          
-          
-        </ul>
-
+              <button onClick={() => saveBook(book.volumeInfo)}> Save </button>
+            </div>
+          </li>
+        ))
+      ) : (
+        <li></li>
+      )}
     </div>
   );
 }
 export default ResultsList;
-

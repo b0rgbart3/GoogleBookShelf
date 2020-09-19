@@ -17,8 +17,6 @@ function App() {
       <div>
         <BookProvider>
           <Navbar />
-
-
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />

@@ -1,11 +1,9 @@
 .gNavBar {
     background-color:rgb(0, 157, 255);
     color:white;
-    width:100%;
     box-sizing: border-box;
-    height:70px;
     overflow: hidden;
-    min-width:540px;
+  
 }
 
 .logo {
@@ -15,8 +13,9 @@
     padding-top:20px;
     box-sizing: border-box;
     font-size:24px;
-    display:inline-block;
+    display:block;
     padding-right:20px;
+    padding-bottom:18px;
 }
 
 .logo:hover {
@@ -24,29 +23,52 @@
 }
 .navlinks {
     margin:0;
-    display:inline-block;
-    float:right;
-    text-align:right;
+    display:block;
+    text-align:center;
     box-sizing: border-box;
     height:70px;
-   
+ 
+    padding:0;
 }
 
 .navLinker {
     margin:0;
     display:inline-block;
-    padding:30px;
-    height:70px;
-    padding-left:34px;
-    padding-right:34px;
     line-height:1em;
-    float:right;
     font-weight: 900;
     color:white;
     background-color:rgba(32, 57, 112,.5);
+    width:50%;
+    box-sizing: border-box;
+    padding:30px;
 }
 
 .navLinker:hover {
     background-color:rgb(16, 28, 56);
     
+}
+
+
+@media only screen and (min-width: 767px) {
+
+    .logo {
+        display:inline-block;
+        float:left;
+
+    }
+
+    .navlinks {
+        display:inline-block;
+        float:right;
+        width:450px;
+    }
+
+    .navLinker {
+        border-radius:4px;
+        border:2px solid rgb(26, 44, 82);
+        padding:24px;
+        margin-top:4px;
+        width:48%;
+        margin-right:4px;
+    }
 }

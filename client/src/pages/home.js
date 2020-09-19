@@ -8,7 +8,7 @@ import Jumbotron from "../components/Jumbotron";
 function Home(){
     const [state, dispatch] = useBookContext();
     return(
-        <div className="container">
+        <div className="page">
           <Jumbotron />
           <SearchBar/>
           <ResultsList />
