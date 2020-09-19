@@ -27,8 +27,7 @@ function ResultsList() {
 
   return (
     <div>
-      <ul>
-      <h4>Results</h4>
+    
         <ul className="collection with-header">
             
               
@@ -66,7 +65,7 @@ state.searchResults.map( (book,index) =>
           
           
         </ul>
-      </ul>
+
     </div>
   );
 }

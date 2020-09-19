@@ -2,11 +2,13 @@ import React, { useRef } from "react";
 import API from "../utils/API";
 import { useBookContext } from "../utils/GlobalState";
 import { SEARCH_RESULTS } from "../utils/actions";
-
+import "./searchbar.css";
 
 const Styles = {
   search: {
     borderRadius: "90px",
+    fontSize: "30px",
+    fontWeight: "600"
   },
   text:{ 
       fontWeight: 900
@@ -37,12 +39,12 @@ function SearchBar() {
 
   return (
    
-      <div className="card #1565c0 blue darken-3">
+      <div className="card searchCard">
 
           <h3 className="">Search for a book</h3>
         <nav className="white z-depth-2" style={Styles.search}>
           <div
-            className="nav-wrapper #1976d2 blue darken-2 z-depth-0"
+            className="nav-wrapper blue lighten z-depth-0"
             style={Styles.search}
           >
             <form onSubmit={handleOnSubmit}>
