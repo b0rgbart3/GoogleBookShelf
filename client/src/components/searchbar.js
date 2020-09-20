@@ -48,7 +48,9 @@ function SearchBar() {
           // only keep the books that have all the relevant info we need 
           if (book.volumeInfo && book.volumeInfo.title && book.volumeInfo.authors && book.volumeInfo.description &&
             book.volumeInfo.imageLinks && book.volumeInfo.previewLink && book.volumeInfo.infoLink ) {
-              let newBook =  {    title: book.volumeInfo.title,
+              let newBook =  {    
+              google_id: book.id,
+              title: book.volumeInfo.title,
               authors: book.volumeInfo.authors,
               description: book.volumeInfo.description,
               image: book.volumeInfo.imageLinks.thumbnail,

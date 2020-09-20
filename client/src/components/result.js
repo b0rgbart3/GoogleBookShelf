@@ -14,9 +14,10 @@ function ResultsList() {
 
   return (
     <div className='resultsDiv'>
+    <ul>
       {state.searchResults ? (
         state.searchResults.map((book, index) => (
-          <li key={book.id}>
+          <li key={index}>
           {/* {book.volumeInfo.title} */}
           <BookCard book={book} page="search_results"/>
             {/* <div className="foundBook group">
@@ -48,6 +49,7 @@ function ResultsList() {
       ) : (
         <li></li>
       )}
+      </ul>
     </div>
   );
 }

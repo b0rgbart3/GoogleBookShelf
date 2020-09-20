@@ -27,7 +27,17 @@ const BookContext = createContext(
     }
   ],
 
-  searchResults: []
+  searchResults: [ {
+    google_id: "",
+    title: "",
+    authors: [""],
+    description: "",
+    image: "",
+    preview: "",
+    info: "",
+
+  }
+  ]
 
 }
 
@@ -44,8 +54,20 @@ const reducer = (state, action) => {
     
   
     case SAVE_BOOK:
+      let newBook = action.book;
+
+      // we want to update the bookInfo in the searchResults so that we can respond when the user saves the book
+
+      // let gsBookObject = state.searchResults.filter( book => book.google_id === newBook.google_id} );
+      // console.log("gsBookObject: ", gsBookObject);
+
+      // if (gsBookObject && gsBookObject[0]) {
+      //   gsBookObject[0].savedClass = "bookButton save saved";
+      // }
+     // newBook.savedClass = "bookButton save saved";
+
       let newSavedBookList = state.savedBooks ? state.savedBooks : [];
-      newSavedBookList.concat(action.book);
+      newSavedBookList.concat(newBook);
       
       return {...state, savedBooks: newSavedBookList }
   
@@ -57,6 +79,8 @@ const reducer = (state, action) => {
       }) };
 
     case SEARCH_RESULTS:
+      let books = action.value;
+     // books.map( book => { book.savedClass = "bookButton save";})
       return {...state, searchResults:action.value }
   
     default:
