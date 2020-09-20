@@ -6,12 +6,11 @@ Full Stack MERN application to search for books from the Google Book API, and th
 1. [Installation](#Installation)
 2. [Usage](#Usage)
 3. [Live Demo](#Live_Demo)
-4. [License](#License)
-5. [Features](#Features)
-6. [Technology](#Technology)
-7. [User Story](#User_Story)
-8. [Contributors](#Contributors)
-9. [Badges](#Badges)
+4. [Features](#Features)
+5. [Technology](#Technology)
+6. [User Story](#User_Story)
+7. [Contributors](#Contributors)
+8. [Badges](#Badges)
 
 <a name="Installation"></a>
 ## Installation
@@ -25,18 +24,18 @@ npm start
 ```
 <a name="Live_Demo"></a>
 ## Live Demo
-<a href="https://serene-sands-53576.herokuapp.com/">Live Demo on Heroku</a>
-<a name='License'></a>
-## License
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+<a href="https://shielded-crag-85117.herokuapp.com/">Live Demo on Heroku</a>
+
 <a name="Features"></a>
 ## Features
 1. search for books
 2. save books
 3. delete books
+
 <a name="Technology"></a>
 ## Technology
-1. Express
+1.  React
+1.  Express
 2.  NodeJS
 3.  GoogleBooksAPI
 
@@ -54,8 +53,11 @@ Bart Dority, Daniel Jauregui, Shambhawi Kumari ,
 ## Badges
  [![Generic badge](https://img.shields.io/badge/made_with-MERN-<COLOR>.svg)](https://shields.io/)
 
-**on github:** <a href='github.com/b0rgBart3, Kionling'>b0rgBart3, Kionling</a>
 
-[![](https://github.com/b0rgBart3, Kionling.png?size=90)](https://github.com/remarkablemark)
+
+**on github:** <a href='github.com/b0rgBart3'>b0rgBart3</a>
+
+[![](https://github.com/b0rgBart3.png?size=90)](https://github.com/remarkablemark)
 
 Email: borgBart3@gmail.com
+
