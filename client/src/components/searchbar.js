@@ -37,7 +37,29 @@ function SearchBar() {
     console.log("Search for: " + searchRef.current.value);
     API.googleBooks(searchRef.current.value)
     .then(results => {
-        dispatch( { type: SEARCH_RESULTS, value: results.data})
+      console.log("Got results.");
+
+      // When we get the results back from Google - let's parse out the data so we only keep
+      // the subset of data that we want for our app
+
+        let foundBooks = [];
+        results.data.map( book => {
+
+          // only keep the books that have all the relevant info we need 
+          if (book.volumeInfo && book.volumeInfo.title && book.volumeInfo.authors && book.volumeInfo.description &&
+            book.volumeInfo.imageLinks && book.volumeInfo.previewLink && book.volumeInfo.infoLink ) {
+              let newBook =  {    title: book.volumeInfo.title,
+              authors: book.volumeInfo.authors,
+              description: book.volumeInfo.description,
+              image: book.volumeInfo.imageLinks.thumbnail,
+              preview: book.volumeInfo.previewLink,
+              info: book.volumeInfo.infoLink };
+
+              foundBooks.push(newBook);
+          }
+        })
+       // console.log(foundBooks);
+       dispatch( { type: SEARCH_RESULTS, value: foundBooks})
     })
     .catch(err => {
       console.log(err);

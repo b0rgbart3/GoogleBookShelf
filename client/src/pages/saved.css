@@ -39,6 +39,10 @@ border-radius:20px;
     width:280px;
 }
 
+.infoMessage {
+    font-size:24px;
+    color:white;
+}
 
 @media only screen and (min-width: 767px) { 
     .savedBooks {
@@ -71,4 +75,4 @@ border-radius:20px;
             display:inline-block;
         }
 
-}
+} 

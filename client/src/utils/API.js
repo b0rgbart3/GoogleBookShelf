@@ -22,11 +22,13 @@ export default {
   saveBook: function(bookData) {
 
     let newSavedBook = {
+      id: bookData.id,
       title: bookData.title,
       authors: bookData.authors,
       description: bookData.description,
-      image: bookData.imageLinks?  bookData.imageLinks.thumbnail : "",
-      link: bookData.previewLink,
+      image: bookData.image ?  bookData.image : "",
+      preview: bookData.previewLink,
+      info: bookData.infoLink
     }
 
 

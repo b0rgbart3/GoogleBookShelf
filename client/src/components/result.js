@@ -1,44 +1,25 @@
 import React from "react";
 import { useBookContext } from "../utils/GlobalState";
 //import { STATES } from "mongoose";
-import { SAVE_BOOK } from "../utils/actions";
-import API from "../utils/API";
+// import { SAVE_BOOK } from "../utils/actions";
+// import API from "../utils/API";
 import "./result.css";
+import BookCard from "../components/BookCard";
 
 function ResultsList() {
   const [state, dispatch] = useBookContext();
 
-  function saveBook(volumeInfo) {
-    dispatch({ type: SAVE_BOOK, book: volumeInfo });
-    API.saveBook(volumeInfo);
-  }
 
-  function previewBook(bookPreviewUrl) {
-    window.location = bookPreviewUrl;
-    //window.open(bookPreviewUrl, "_blank")
-  }
 
-  // Return a shorter textString - but don't split words
-  function shorten(textString, desiredLength) {
-    if (!textString || textString.length < desiredLength) {
-      return textString;
-    }
-    let split = textString.split(" ");
-    let shortString = ''; 
-    let splitNumber = 0;
-    while( shortString.length < desiredLength  && (splitNumber < split.length)) {
-      shortString += split[splitNumber] + " ";
-      splitNumber++;
-    }
-    return shortString; 
-  }
 
   return (
     <div className='resultsDiv'>
       {state.searchResults ? (
         state.searchResults.map((book, index) => (
           <li key={book.id}>
-            <div className="foundBook group">
+          {/* {book.volumeInfo.title} */}
+          <BookCard book={book} page="search_results"/>
+            {/* <div className="foundBook group">
           <a href={ book.volumeInfo.previewLink } >
               <div className='bookImage'>
                 {book.volumeInfo.imageLinks ? (
@@ -61,7 +42,7 @@ function ResultsList() {
 
 
              
-            </div>
+            </div> */}
           </li>
         ))
       ) : (

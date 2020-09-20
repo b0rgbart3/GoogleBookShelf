@@ -11,12 +11,19 @@ const BookContext = createContext(
 {
   savedBooks: [
     {
+      // title: "",
+      // authors: [""],
+      // description: "",
+      // image: "",
+      // link: "",
+      // date: ""
+      google_id: "",
       title: "",
       authors: [""],
       description: "",
       image: "",
-      link: "",
-      date: ""
+      preview: "",
+      info: ""
     }
   ],
 
