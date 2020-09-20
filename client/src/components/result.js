@@ -13,6 +13,11 @@ function ResultsList() {
     API.saveBook(volumeInfo);
   }
 
+  function previewBook(bookPreviewUrl) {
+    window.location = bookPreviewUrl;
+    //window.open(bookPreviewUrl, "_blank")
+  }
+
   // Return a shorter textString - but don't split words
   function shorten(textString, desiredLength) {
     if (!textString || textString.length < desiredLength) {
@@ -45,10 +50,13 @@ function ResultsList() {
 
               <div className='bookInfo'>
                 <h2>{ shorten(book.volumeInfo.title, 30) }</h2>
-                <h3>{ book.volumeInfo.subtitle} </h3>
-                <h4>Author: { book.volumeInfo.authors[0] }</h4>
+                <h3>{ shorten(book.volumeInfo.subtitle, 30)} </h3>
+                <h4>Author: { (book.volumeInfo.authors && book.volumeInfo.authors[0]) ? book.volumeInfo.authors[0] : "not listed"  }</h4>
                 <p>{ shorten(book.volumeInfo.description, 260) }</p>
-                <button onClick={() => saveBook(book.volumeInfo)} className="save"> Save </button>
+                <button onClick={() => previewBook(book.volumeInfo.infoLink)} className="bookButton">Info</button>
+                <button onClick={() => previewBook(book.volumeInfo.previewLink)} className="bookButton"> Preview </button>
+                <button onClick={() => saveBook(book.volumeInfo)} className="bookButton save"> Save </button>
+               
               </div>
 
 
