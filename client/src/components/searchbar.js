@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import API from "../utils/API";
 import { useBookContext } from "../utils/GlobalState";
-import { SEARCH_RESULTS } from "../utils/actions";
+import { SEARCH_RESULTS, CLEAR_RESULTS } from "../utils/actions";
 import "./searchbar.css";
 
 // const Styles = {
@@ -28,6 +28,7 @@ function SearchBar() {
   function clearField() {
   
     searchRef.current.value = "";
+    dispatch( { type: CLEAR_RESULTS });
   }
 
   function handleOnSubmit(e) {

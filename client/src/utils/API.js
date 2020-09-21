@@ -28,7 +28,7 @@ export default {
       description: bookData.description,
       image: bookData.image ?  bookData.image : "",
       preview: bookData.previewLink,
-      info: bookData.infoLink
+      info: bookData.infoLink,
     }
 
 

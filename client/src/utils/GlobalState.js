@@ -3,7 +3,8 @@ import {
     GET_ALL_BOOKS,
     SAVE_BOOK,
     DELETE_BOOK,
-    SEARCH_RESULTS
+    SEARCH_RESULTS,
+    CLEAR_RESULTS
   } from "./actions";
 
 
@@ -23,7 +24,8 @@ const BookContext = createContext(
       description: "",
       image: "",
       preview: "",
-      info: ""
+      info: "",
+      saved: true
     }
   ],
 
@@ -35,6 +37,7 @@ const BookContext = createContext(
     image: "",
     preview: "",
     info: "",
+    saved: false
 
   }
   ]
@@ -51,10 +54,14 @@ const reducer = (state, action) => {
     switch (action.type) {
     case GET_ALL_BOOKS:
        return  {...state, savedBooks: action.savedBooks};
+
+    case CLEAR_RESULTS:
+      return {...state, searchResults: [] };
     
   
     case SAVE_BOOK:
       let newBook = action.book;
+      newBook.saved = true;
 
       // we want to update the bookInfo in the searchResults so that we can respond when the user saves the book
 

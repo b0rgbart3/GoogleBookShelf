@@ -9,8 +9,8 @@ function BookCard(props) {
     //let saved = false;
    // let savedClassString = "";
     const [state, dispatch] = useBookContext();
-    const [count, setCount] = useState(0);
-    const [saved, setSaved] = useState(false);
+    // const [count, setCount] = useState(0);
+    // const [saved, setSaved] = useState(false);
    // const [ savedClass, setSavedClass] = useState({savedClass: "bookButton save"});
    // setSavedClass("bookButton save ");
   //  let previewLink =  "";
@@ -54,8 +54,8 @@ function BookCard(props) {
   });
 
   function saveBook(book) {
-    setSaved(true);
-    setCount(count+1);
+   // setSaved(true);
+ 
    // setSavedClass({savedClass: "bookButton save saved"});
     dispatch({ type: SAVE_BOOK, book:book });
     API.saveBook(book).then(nothing=> {
@@ -92,7 +92,6 @@ function BookCard(props) {
       
 
       <div className="bookInfo">
-      <p>You clicked {count} times</p>
         <h2>{shorten(book.title, 30)}</h2>
         <h3>{shorten(book.subtitle, 30)} </h3>
         <h4>
@@ -118,10 +117,14 @@ function BookCard(props) {
         </button> : <span></span>}
 
         { props.page==="search_results" ? <button onClick={() => saveBook(book)} 
-        className={  `bookButton save ${saved ? "saved" : "" }` }
-        style={ saved ? Styles.saved : Styles.save }>
+        // className={  `bookButton save ${saved ? "saved" : "" }` }
+        className={ book.saved ? "bookButton save saved" : "bookButton save"  }
+        // className={location.pathname === "/saved" ? "navLinker navActive" : "navLinker"}
+
+         style={ book.saved ? Styles.saved : Styles.save }
+        >
         
-        { saved ? "saved" : "save" } </button> : <button onClick={() => removeBook(book)} className="bookButton remove">Remove</button>
+        { book.saved ? "saved" : "save" } </button> : <button onClick={() => removeBook(book)} className="bookButton remove">Remove</button>
 
         }
         
