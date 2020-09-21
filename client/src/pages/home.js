@@ -1,6 +1,6 @@
 import React from "react"
 import {useBookContext}  from "../utils/GlobalState";
-import SearchBar from "../components/searchbar";
+
 import ResultsList from "../components/result";
 import Jumbotron from "../components/Jumbotron";
 
@@ -10,7 +10,6 @@ function Home(){
     return(
         <div className="page">
           <Jumbotron />
-          <SearchBar/>
           <ResultsList />
     </div>
     )

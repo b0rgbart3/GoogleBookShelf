@@ -90,7 +90,7 @@ function SearchBar() {
               </div>
 <br></br> */}
               <div>
-                <div className='myInputField'><input className='gbSearch' ref={searchRef} />
+                <div className='myInputField group'><input className='gbSearch' ref={searchRef} />
                 <br></br><i className="material-icons mGlass">search</i>
                 <i className="material-icons myCloser" onClick={clearField}>close</i></div>
                 <button type='submit' className="startSearch">SEARCH</button>

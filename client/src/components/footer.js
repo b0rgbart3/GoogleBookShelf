@@ -13,13 +13,13 @@ function Footer() {
           <div className="col s12">
             <h5 className="white-text"> </h5>
             <p className="grey-text text-lighten-4">
-              You can use rows and columns here to organize your footer content.
+             
             </p>
           </div>
           <div className="col s12">
-            <h5 className="white-text">Links</h5>
+            <h5 className="white-text"></h5>
             <ul>
-              <li>
+              {/* <li>
                 <a className="grey-text text-lighten-3" href="#!">
                   Link 1
                 </a>
@@ -38,16 +38,16 @@ function Footer() {
                 <a className="grey-text text-lighten-3" href="#!">
                   Link 4
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
       </div>
       <div className="footer-copyright">
         <div className="container">
-          © 2014 Copyright Text
-          <a className="grey-text text-lighten-4 right" href="#!">
-            More Links
+          © 2020 Bart Dority
+          <a className="grey-text text-lighten-4 right" href="http://vast-coast-19153.herokuapp.com/">
+            GoogleBookShelf App Developer
           </a>
         </div>
       </div>

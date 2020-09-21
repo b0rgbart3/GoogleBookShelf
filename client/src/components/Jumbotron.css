@@ -16,8 +16,8 @@
     background-image:url('../images/atdesk.gif');
     color:white;
     text-shadow:0 0 8px black;
-    height:500px;
-    background-position:50% 50%;
+    height:540px;
+    background-position:50% 55%;
     background-size:100%;
     position: relative;
 }
@@ -35,7 +35,7 @@
     text-align: right;
     padding-right:20px;
     position: absolute;
-    bottom:10px;
+    bottom:120px;
     right:10px;
     text-shadow: 0 0 18px rgb(5, 17, 85);
     font-size:16px;
