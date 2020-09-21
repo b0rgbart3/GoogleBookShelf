@@ -44,9 +44,10 @@
 }
 
 .navLinker:hover {
-    background-color:rgb(16, 28, 56);
+    background-color:rgb(17, 41, 96);
     
 }
+
 
 
 @media only screen and (min-width: 767px) {
@@ -71,4 +72,10 @@
         width:48%;
         margin-right:4px;
     }
+}
+
+
+.navActive {
+    background-color:red;
+    background-color:rgb(16, 28, 56);
 }

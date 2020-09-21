@@ -13,10 +13,10 @@ function Navbar() {
     <ul className="navlinks group">
 
     {/* to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"} */}
-    <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"} >
-      <li className="navLinker"> Find Books</li></Link>
-    <Link to="/saved" className={location.pathname === "/saved" ? "nav-link active" : "nav-link"}>
-      <li className="navLinker">View My Colleciton</li></Link>
+    <Link to="/" className={location.pathname === "/" ? "navLinker navActive" : "navLinker"} >
+      <li> Find Books</li></Link>
+    <Link to="/saved" className={location.pathname === "/saved" ? "navLinker navActive" : "navLinker"}>
+      <li>View My Colleciton</li></Link>
  
 
 
