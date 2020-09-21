@@ -11,7 +11,7 @@
     letter-spacing: -.08em;
     width:95%;
     margin:auto;
-    margin-top:160px;
+    margin-top:100px;
     text-shadow: none;
     box-shadow:none;
 }
@@ -33,7 +33,7 @@ input.gbSearch {
     height:60px;
     position: relative;
     vertical-align: top;
-    width:500px;
+    width:400px;
     transition: all .5s;
     cursor: pointer;
 }
@@ -44,7 +44,7 @@ input.gbSearch:hover {
 input.gbSearch:focus {
     background-color:white;
     border:2px solid rgba(255,255,255,1);
-    width:600px;
+    width:450px;
 }
 
 .mGlass {
@@ -109,4 +109,25 @@ input.gbSearch:focus {
 
 .startSearch:visited, .startSearch:active, .startSearch:focus {
     background-color:rgb(0, 59, 147);
+}
+
+
+
+@media only screen and (min-width: 800px) {
+  
+
+        .searchCard {
+            margin-top:160px;
+        }
+
+        input.gbSearch {
+            width:500px;
+        }
+
+        input.gbSearch:focus {
+            background-color:white;
+            border:2px solid rgba(255,255,255,1);
+            width:600px;
+        }
+    
 }
