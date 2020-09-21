@@ -14,7 +14,7 @@ import NoMatch from "./pages/NoMatch";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="stretcher">
         <BookProvider>
           <Navbar />
           <Switch>
