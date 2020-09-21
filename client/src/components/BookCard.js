@@ -68,7 +68,7 @@ function BookCard(props) {
   }
 
   function removeBook(book) {
-    console.log("About to delete: ", book);
+    
     API.deleteBook(book._id).then( dispatch({ type: DELETE_BOOK, id: book._id})).catch( err =>  console.log(err) );
   }
   function previewBook(bookPreviewUrl) {
@@ -116,7 +116,7 @@ function BookCard(props) {
           Preview{" "}
         </button> : <span></span>}
 
-        { props.page==="search_results" ? <button onClick={() => saveBook(book)} 
+        { props.page==="search_results" ? <button onClick={() => { if (!book.saved) { saveBook(book) }}} 
         // className={  `bookButton save ${saved ? "saved" : "" }` }
         className={ book.saved ? "bookButton save saved" : "bookButton save"  }
         // className={location.pathname === "/saved" ? "navLinker navActive" : "navLinker"}
@@ -124,9 +124,12 @@ function BookCard(props) {
          style={ book.saved ? Styles.saved : Styles.save }
         >
         
-        { book.saved ? "saved" : "save" } </button> : <button onClick={() => removeBook(book)} className="bookButton remove">Remove</button>
+        { book.saved ? "saved" : "save" } </button> : <span></span>
 
         }
+
+        { props.page==="saved" ?  <i className="material-icons savedBookCloser" onClick={()=>removeBook(book)}>close</i> : <span></span>}
+       
         
          
       </div>

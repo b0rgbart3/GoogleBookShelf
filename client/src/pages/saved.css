@@ -5,21 +5,10 @@
 .savedBooks {
 width:100%;
 margin:auto;
-background-color:rgba(255,255,255,.25);
 padding:20px;
-border-radius:20px;
-
-}
-
-
-.savedBook {
-    border:2px solid blue;
-    background-color:white;
-    border-radius:20px;
-    margin-top:4px;
-    margin-bottom:4px;
-    box-sizing: border-box;
-    padding:20px;
+width:95%;
+margin:auto;
+padding-bottom:280px;
 }
 
 .savedBookInfo {
@@ -45,20 +34,10 @@ border-radius:20px;
 }
 
 @media only screen and (min-width: 767px) { 
+
     .savedBooks {
         width:80%;
-        margin:auto;
-        padding:20px;
-        margin-top:40px;
-        margin-bottom:140px;
-        }
-        
-        
-        .savedBook {
-            border:2px solid blue;
-            box-sizing: border-box;
-            padding:20px;
-        }
+    }
 
         .savedBookImage {
             display:inline-block;

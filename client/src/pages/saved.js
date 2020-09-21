@@ -31,24 +31,11 @@ function Saved() {
                 state.savedBooks && state.savedBooks.length > 0 ?
                 state.savedBooks.map((book,index) => {
                 return (
-                    <div className="savedBook group" key={book._id}>
-                    <BookCard book={book} page="saved"/>
-
-                    {/* {book.volumeInfo } */}
-                 {/* <div class='savedBookImage'>
-                 { (book.image!="") && (book.image != undefined) ? 
-                    <img src={book.image} /> : <p>No image stored.</p> }
-
-               </div>
-                 <div class='savedBookInfo group'>
-                    <h2>{book.title}</h2>
-                    <p>{book.description}</p>
-                    <button onClick={()=>removeBook( book._id )}>
-                        Remove Book</button> 
-                </div> */}
-                  
                    
-                </div>)
+                    <BookCard book={book} page="saved" key={book._id} />                  
+                   
+            
+                )
             })
             :
             <div className="infoMessage">There aren't any books on your bookshelf.<br/><br/>Go to the search page to find some books that you are interested in.</div>

@@ -6,7 +6,10 @@ module.exports = {
     db.Book
       .find(req.query)
       .sort({ date: -1 })
-      .then(dbModel => res.json({...dbModel, saved:true}))
+      .then(dbModel => {  
+        let data = dbModel;
+        data.saved = true;
+        res.json(data)   })
       .catch(err => res.status(422).json(err));
   },
 

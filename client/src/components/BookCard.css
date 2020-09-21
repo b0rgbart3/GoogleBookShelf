@@ -4,9 +4,10 @@
     border:2px solid rgb(0, 102, 255);
     margin:4px;
     box-sizing: border-box;
-    padding:10px;
     border-radius:20px;
     background-color:rgb(250, 250, 250);
+    position:relative;
+    padding:10px;
 }
 
 .bookImage {
@@ -108,6 +109,20 @@
     background-color:gray;
 }
 
+.savedBookCloser {
+    position: absolute;
+    top:16px;
+    right:16px;
+    color:gray;
+    user-select: none;
+    cursor:pointer;
+    font-size:34px;
+    font-weight: 600;
+}
+
+.savedBookCloser:hover {
+    color:black;
+}
 
 @media only screen and (min-width: 800px) {
 
