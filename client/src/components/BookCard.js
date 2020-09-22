@@ -101,6 +101,7 @@ function BookCard(props) {
             : "not listed"}
         </h4>
         <p>{shorten(book.description, 260)}</p>
+        <p>Published: {book.publishedDate}</p>
         <button
           onClick={() => previewBook(book.info)}
           className="bookButton"

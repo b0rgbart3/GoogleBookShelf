@@ -17,7 +17,7 @@ function ResultsList() {
     <ul>
       {state.searchResults ? (
         state.searchResults.map((book, index) => (
-          <li key={index}>
+          <li key={book.google_id}>
           {/* {book.volumeInfo.title} */}
           <BookCard book={book} page="search_results"/>
             {/* <div className="foundBook group">

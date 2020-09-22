@@ -22,6 +22,7 @@ const BookContext = createContext(
       title: "",
       authors: [""],
       description: "",
+      publishedDate: "",
       image: "",
       preview: "",
       info: "",
@@ -34,6 +35,7 @@ const BookContext = createContext(
     title: "",
     authors: [""],
     description: "",
+    publishedDate: "",
     image: "",
     preview: "",
     info: "",
@@ -87,7 +89,12 @@ const reducer = (state, action) => {
 
     case SEARCH_RESULTS:
       let books = action.value;
-     // books.map( book => { book.savedClass = "bookButton save";})
+      books.filter( book => 
+
+        state.savedBooks.filter( savedBook => savedBook.google_id !== book.google_id)
+
+      )
+       
       return {...state, searchResults:action.value }
   
     default:

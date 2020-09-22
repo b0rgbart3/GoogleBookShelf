@@ -31,6 +31,9 @@ function SearchBar() {
     dispatch( { type: CLEAR_RESULTS });
   }
 
+  function justTheYear(publishedDate) {
+    return publishedDate.substr(0,4);
+  }
   function handleOnSubmit(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -54,6 +57,7 @@ function SearchBar() {
               title: book.volumeInfo.title,
               authors: book.volumeInfo.authors,
               description: book.volumeInfo.description,
+              publishedDate: justTheYear(book.volumeInfo.publishedDate),
               image: book.volumeInfo.imageLinks.thumbnail,
               preview: book.volumeInfo.previewLink,
               info: book.volumeInfo.infoLink };

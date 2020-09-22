@@ -7,6 +7,7 @@ const bookSchema = new Schema({
   title: { type: String, required: true },
   authors: [{ type: String, required: true }],
   description: String,
+  publishedDate: String,
   image: String,
   preview: String,
   info: String,

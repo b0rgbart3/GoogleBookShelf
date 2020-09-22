@@ -26,6 +26,7 @@ export default {
       title: bookData.title,
       authors: bookData.authors,
       description: bookData.description,
+      publishedDate: bookData.publishedDate,
       image: bookData.image ?  bookData.image : "",
       preview: bookData.preview,
       info: bookData.info,
