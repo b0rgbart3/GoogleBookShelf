@@ -28,6 +28,7 @@ const BookContext = createContext(
       image: "",
       preview: "",
       info: "",
+      date: "",
       saved: true
     }
   ],
@@ -41,6 +42,7 @@ const BookContext = createContext(
     image: "",
     preview: "",
     info: "",
+    date: false,
     saved: false
 
   }

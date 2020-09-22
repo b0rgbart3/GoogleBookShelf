@@ -3,6 +3,7 @@ import "./BookCard.css";
 import API from "../utils/API";
 import { useBookContext } from "../utils/GlobalState";
 import { SAVE_BOOK, DELETE_BOOK } from "../utils/actions";
+import moment from 'moment';
 
 function BookCard(props) {
     let book = props.book;
@@ -102,6 +103,9 @@ function BookCard(props) {
         </h4>
         <p>{shorten(book.description, 260)}</p>
         <p>Published: {book.publishedDate}</p>
+        <p> { book.date? 'date Added:' + moment(book.date).format('YYYY-MM-DD') : ''}</p>
+
+
         <button
           onClick={() => previewBook(book.info)}
           className="bookButton"
