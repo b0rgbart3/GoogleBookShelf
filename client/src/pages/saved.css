@@ -53,8 +53,14 @@ padding-bottom:280px;
     background-color:rgb(0, 121, 213);
 }
 
+.sortButton:active {
+    background-color:black;
+    color:white;
+    box-shadow:0 0 8px rgb(84, 161, 255);
+}
+
 .sortActive {
-    background-color:cyan;
+    background-color:rgb(143, 206, 245);
 }
 .sortTitle {
     display:inline-block;
