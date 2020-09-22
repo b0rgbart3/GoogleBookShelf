@@ -14,7 +14,7 @@ router.get("/google/:name", (req, res) => {
    //res.json({q: req.params.name });
 
   axios.get("https://www.googleapis.com/books/v1/volumes",
-   { params: { q: req.params.name }}).then(({ data }) => {
+   { params: { key: process.env.GOOGLE_BOOKS_API_KEY, q: req.params.name, maxResults: 40 }}).then(({ data }) => {
 
     console.log(data.items);
 

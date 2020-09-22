@@ -1,5 +1,5 @@
 .gNavBar {
-    background-color:rgb(0, 157, 255);
+    background-color:#009dff;
     color:white;
     box-sizing: border-box;
     overflow: hidden;
@@ -10,16 +10,23 @@
     padding-left:20px;
     color:white;
     font-weight: 900;
-    padding-top:20px;
     box-sizing: border-box;
     font-size:24px;
     display:block;
     padding-right:20px;
     padding-bottom:18px;
+    background: linear-gradient(138deg, rgba(6,60,131,1) 20%, rgba(0,157,255,1) 58%);
+    transition:all .5s;
+    height:80px;
+    padding-top:20px;
 }
 
 .logo:hover {
-    color:rgb(0, 40, 101);
+    /* color:rgb(0, 40, 101); */
+    background: linear-gradient(138deg, rgba(36,192,254,1) 20%, rgba(0,157,255,1) 58%);
+    text-decoration: underline;
+    /* height:84px;
+    padding-top:24px; */
 }
 .navlinks {
     margin:0;
@@ -55,6 +62,7 @@
     .logo {
         display:inline-block;
         float:left;
+        min-width:320px;
 
     }
 
