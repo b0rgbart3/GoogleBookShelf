@@ -4,3 +4,4 @@ export const DELETE_BOOK = 'DELETE_BOOK';
 export const LOADING = 'LOADING';
 export const SEARCH_RESULTS = 'SEARCH_RESULTS';
 export const CLEAR_RESULTS = 'CLEAR_RESULTS';
+export const SORT_SAVED= 'SORT_SAVED';

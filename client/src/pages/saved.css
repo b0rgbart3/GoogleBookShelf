@@ -33,6 +33,35 @@ padding-bottom:280px;
     color:white;
 }
 
+.sortButton {
+    padding:9px;
+    background-color:rgb(0, 157, 255);
+    text-transform: uppercase;
+    border-radius:4px;
+    display:inline-block;
+    float:left;
+    margin-right:12px;
+    font-weight: 600;
+    padding-left:16px;
+    padding-right:16px;
+    user-select: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.sortButton:hover {
+    background-color:rgb(0, 121, 213);
+}
+.sortTitle {
+    display:inline-block;
+    float:left;
+    margin-right:10px;
+    font-weight: 700;
+    color:white;
+    position: relative;
+    top:-12px;
+    font-size:20px;
+}
 @media only screen and (min-width: 767px) { 
 
     .savedBooks {

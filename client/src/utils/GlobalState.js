@@ -4,8 +4,10 @@ import {
     SAVE_BOOK,
     DELETE_BOOK,
     SEARCH_RESULTS,
-    CLEAR_RESULTS
+    CLEAR_RESULTS,
+    SORT_SAVED,
   } from "./actions";
+  import {sortByPublishedDate, sortByTitle} from "./sorts";
 
 
 const BookContext = createContext(
@@ -42,7 +44,9 @@ const BookContext = createContext(
     saved: false
 
   }
-  ]
+  ],
+
+  sort: ""
 
 }
 
@@ -59,6 +63,21 @@ const reducer = (state, action) => {
 
     case CLEAR_RESULTS:
       return {...state, searchResults: [] };
+
+    case SORT_SAVED:
+      let newSavedBooks = state.savedBooks;
+      switch (action.sort) {
+        case "publishedDate":
+          newSavedBooks = sortByPublishedDate(newSavedBooks);
+          break;
+        case "title":
+          newSavedBooks = sortByTitle(newSavedBooks);
+          break;
+        default:
+          
+          break;
+      }
+      return {...state, savedBooks: newSavedBooks };
     
   
     case SAVE_BOOK:
