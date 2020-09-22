@@ -1,4 +1,4 @@
-import React,{ useEffect } from "react";
+import React,{ useEffect, useState } from "react";
 import { useBookContext } from "../utils/GlobalState";
 // import { Redirect } from "react-router-dom";
 import API from "../utils/API";
@@ -10,6 +10,8 @@ import { sortByPublishedDate } from "../utils/sorts";
 
 function Saved() {
     const [state, dispatch] = useBookContext();
+    const [sort, setSort] = useState();
+
     useEffect(() => {
         // Get all the books from our Mongo DB
 
@@ -26,17 +28,27 @@ function Saved() {
           API.deleteBook(id).then( dispatch({ type: DELETE_BOOK, id})).catch( err =>  console.log(err) );
       }
       function sortByPublishedDate() {
+          setSort("publishedDate");
           dispatch( {type: SORT_SAVED, sort: "publishedDate"});
       }
       function sortByTitle() {
+          setSort("title");
         dispatch( {type: SORT_SAVED, sort: "title"});
     }
 
     return (
         <div className="savedBooks group">
             <div className="filters group"><p className='sortTitle'>Sort By:</p>
-                <div className='sortButton' onClick={()=>sortByPublishedDate()}>published date</div>
-                <div className='sortButton' onClick={()=>sortByTitle()}>title</div>
+                <div className={sort==="publishedDate" ? 'sortButton sortActive' : 'sortButton'} onClick={()=>sortByPublishedDate()}>
+
+                published date
+                  <i className="material-icons myDown">keyboard_arrow_down</i>
+                </div>
+                <div className={sort==="title" ? 'sortButton sortActive' : 'sortButton'} onClick={()=>sortByTitle()}>
+                
+                title 
+                 <i className="material-icons myDown">keyboard_arrow_down</i>
+                 </div>
             </div>
             {
                 

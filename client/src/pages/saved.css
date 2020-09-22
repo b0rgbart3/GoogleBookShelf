@@ -52,6 +52,10 @@ padding-bottom:280px;
 .sortButton:hover {
     background-color:rgb(0, 121, 213);
 }
+
+.sortActive {
+    background-color:cyan;
+}
 .sortTitle {
     display:inline-block;
     float:left;
@@ -61,6 +65,15 @@ padding-bottom:280px;
     position: relative;
     top:-12px;
     font-size:20px;
+}
+
+.myDown {
+    padding:0;
+    margin:0;
+    line-height:0;
+    position: relative;
+    top:10px;
+    font-size:30px;
 }
 @media only screen and (min-width: 767px) { 
 
