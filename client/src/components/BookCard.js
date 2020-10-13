@@ -11,6 +11,7 @@ function BookCard(props) {
    // let savedClassString = "";
     const [state, dispatch] = useBookContext();
     // const [count, setCount] = useState(0);
+    const [ displayed, setDisplayed] = useState(false);
     // const [saved, setSaved] = useState(false);
    // const [ savedClass, setSavedClass] = useState({savedClass: "bookButton save"});
    // setSavedClass("bookButton save ");
@@ -52,6 +53,7 @@ function BookCard(props) {
   //   else {
   //     setSavedClass(`bookButton save`);
   //   }
+  console.log("Done Displaying the card, ", displayed);
   });
 
   function saveBook(book) {

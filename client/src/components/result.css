@@ -6,3 +6,14 @@
     padding-bottom:180px;
 }
 
+.waiting {
+    width:100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.waiting img {
+    height: 160px;
+    width:480px;
+}
+

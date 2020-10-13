@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import API from "../utils/API";
 import { useBookContext } from "../utils/GlobalState";
-import { SEARCH_RESULTS, CLEAR_RESULTS } from "../utils/actions";
+import { SEARCH_RESULTS, CLEAR_RESULTS, STARTING_SEARCH, FINISHED_SEARCH } from "../utils/actions";
 import "./searchbar.css";
 
 // const Styles = {
@@ -32,16 +32,29 @@ function SearchBar() {
   }
 
   function justTheYear(publishedDate) {
+    if (publishedDate) {
     return publishedDate.substr(0,4);
+    } else {
+      return null;
+    }
   }
   function handleOnSubmit(e) {
     e.preventDefault();
     e.stopPropagation();
   
     console.log("Search for: " + searchRef.current.value);
+
+    dispatch( { type: STARTING_SEARCH });
+
     API.googleBooks(searchRef.current.value)
     .then(results => {
       console.log("Got results.");
+
+      let waiter = setTimeout( function() {
+        dispatch( { type: FINISHED_SEARCH });
+      }, 3000);
+      
+    
 
       // When we get the results back from Google - let's parse out the data so we only keep
       // the subset of data that we want for our app

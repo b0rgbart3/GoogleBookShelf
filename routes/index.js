@@ -14,13 +14,14 @@ router.get("/google/:name", (req, res) => {
    //res.json({q: req.params.name });
 
   axios.get("https://www.googleapis.com/books/v1/volumes",
-   { params: { key: process.env.GOOGLE_BOOKS_API_KEY, q: req.params.name, maxResults: 40 }}).then(({ data }) => {
+   { params: {  q: req.params.name, maxResults: 40 }}).then(({ data }) => {
 
+    //key: process.env.GOOGLE_BOOKS_API_KEY,
     console.log(data.items);
 
     res.json( data.items );
   })
-    .catch(err => res.status(422).json(err));
+    .catch(err => res.json(err));  // status(422).
 });
 
 // Jerome's example

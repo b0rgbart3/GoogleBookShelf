@@ -6,12 +6,15 @@ import {
     SEARCH_RESULTS,
     CLEAR_RESULTS,
     SORT_SAVED,
+    STARTING_SEARCH,
+    FINISHED_SEARCH,
   } from "./actions";
   import {sortByPublishedDateAsc, sortByPublishedDateDes, sortByTitleAsc, sortByTitleDes} from "./sorts";
 
 
 const BookContext = createContext(
 {
+  startingSearch: false,
   savedBooks: [
     {
       // title: "",
@@ -60,6 +63,12 @@ const { Provider } = BookContext;
 
 const reducer = (state, action) => {
     switch (action.type) {
+    
+    case STARTING_SEARCH:
+      return {...state, startingSearch: true,  searchResults: [] };
+    case FINISHED_SEARCH:
+      return {...state, startingSearch: false };
+
     case GET_ALL_BOOKS:
        return  {...state, savedBooks: action.savedBooks};
 

@@ -14,6 +14,11 @@ function ResultsList() {
 
   return (
     <div className='resultsDiv'>
+    {state.startingSearch ? (
+      <div className='waiting'><img src='images/waiting2.gif'></img></div>
+    ) : (
+      <p></p>
+    ) }
     <ul>
       {state.searchResults ? (
         state.searchResults.map((book, index) => (
