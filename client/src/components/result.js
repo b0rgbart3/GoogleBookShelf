@@ -35,7 +35,7 @@ function ResultsList() {
       </ul>
 
       {
-        state.searchFinished && !state.searchResults ? (
+        state.searchFinished && !state.searchResults && state.term ? (
           <p class='noresults'>We're sorry - there were no results for: {state.term}</p>
         ) : (<p></p>)
       }

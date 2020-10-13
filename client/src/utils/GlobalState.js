@@ -80,7 +80,7 @@ const reducer = (state, action) => {
        return  {...state, savedBooks: action.savedBooks};
 
     case CLEAR_RESULTS:
-      return {...state, searchResults: null };
+      return {...state, searchResults: null, term: null, searchFinsihed: false };
 
     case SORT_SAVED:
       let newSavedBooks = state.savedBooks;
