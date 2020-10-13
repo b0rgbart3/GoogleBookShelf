@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import API from "../utils/API";
 import { useBookContext } from "../utils/GlobalState";
-import { SEARCH_RESULTS, CLEAR_RESULTS, STARTING_SEARCH, FINISHED_SEARCH } from "../utils/actions";
+import { SEARCH_RESULTS, CLEAR_RESULTS, STARTING_SEARCH, FINISHING_SEARCH, FINISHED_SEARCH } from "../utils/actions";
 import "./searchbar.css";
 
 // const Styles = {
@@ -43,17 +43,20 @@ function SearchBar() {
     e.stopPropagation();
   
     console.log("Search for: " + searchRef.current.value);
+    let term = searchRef.current.value;
 
-    dispatch( { type: STARTING_SEARCH });
+    dispatch( { type: STARTING_SEARCH, term: term});
 
     API.googleBooks(searchRef.current.value)
     .then(results => {
       console.log("Got results.");
 
+      dispatch( { type: FINISHING_SEARCH });
+
       let waiter = setTimeout( function() {
         dispatch( { type: FINISHED_SEARCH });
-      }, 3000);
-      
+      }, 500);
+
     
 
       // When we get the results back from Google - let's parse out the data so we only keep

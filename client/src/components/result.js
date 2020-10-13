@@ -14,47 +14,31 @@ function ResultsList() {
 
   return (
     <div className='resultsDiv'>
-    {state.startingSearch ? (
-      <div className='waiting'><img src='images/waiting2.gif'></img></div>
-    ) : (
-      <p></p>
-    ) }
+    {/* {state.searchStarted ? (<p>Started</p>):(<p>Ended</p>) } */}
+    {state.searchStarted ? (
+      <div className={ state.searchFinished ? ('waiting done') : ('waiting')}><img src='images/waiting2.gif'></img></div>
+    ) : ( <span></span> )
+        
+    }
+
     <ul>
-      {state.searchResults ? (
+      { state.searchResults && state.searchResults.length > 0 ? (
         state.searchResults.map((book, index) => (
           <li key={book.google_id}>
           {/* {book.volumeInfo.title} */}
           <BookCard book={book} page="search_results"/>
-            {/* <div className="foundBook group">
-          <a href={ book.volumeInfo.previewLink } >
-              <div className='bookImage'>
-                {book.volumeInfo.imageLinks ? (
-                  <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.id} />
-                ) : (
-                  "noimage"
-                )}
-              </div></a>
-
-              <div className='bookInfo'>
-                <h2>{ shorten(book.volumeInfo.title, 30) }</h2>
-                <h3>{ shorten(book.volumeInfo.subtitle, 30)} </h3>
-                <h4>Author: { (book.volumeInfo.authors && book.volumeInfo.authors[0]) ? book.volumeInfo.authors[0] : "not listed"  }</h4>
-                <p>{ shorten(book.volumeInfo.description, 260) }</p>
-                <button onClick={() => previewBook(book.volumeInfo.infoLink)} className="bookButton">Info</button>
-                <button onClick={() => previewBook(book.volumeInfo.previewLink)} className="bookButton"> Preview </button>
-                <button onClick={() => saveBook(book.volumeInfo)} className="bookButton save"> Save </button>
-               
-              </div>
-
-
-             
-            </div> */}
           </li>
         ))
       ) : (
         <li></li>
       )}
       </ul>
+
+      {
+        state.searchFinished && !state.searchResults ? (
+          <p class='noresults'>We're sorry - there were no results for: {state.term}</p>
+        ) : (<p></p>)
+      }
     </div>
   );
 }

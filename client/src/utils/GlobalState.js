@@ -7,6 +7,7 @@ import {
     CLEAR_RESULTS,
     SORT_SAVED,
     STARTING_SEARCH,
+    FINISHING_SEARCH,
     FINISHED_SEARCH,
   } from "./actions";
   import {sortByPublishedDateAsc, sortByPublishedDateDes, sortByTitleAsc, sortByTitleDes} from "./sorts";
@@ -14,7 +15,9 @@ import {
 
 const BookContext = createContext(
 {
-  startingSearch: false,
+  searchStarted: false,
+  searchFinished: false,
+  term: '',
   savedBooks: [
     {
       // title: "",
@@ -65,15 +68,19 @@ const reducer = (state, action) => {
     switch (action.type) {
     
     case STARTING_SEARCH:
-      return {...state, startingSearch: true,  searchResults: [] };
+      return {...state, searchStarted: true,  searchResults: null, searchFinished: false, term: action.term};
+    case FINISHING_SEARCH:
+        console.log("FINISHING in GS..");
+        return {...state, searchStarted: true, searchFinished: true };
     case FINISHED_SEARCH:
-      return {...state, startingSearch: false };
+      console.log("FINISHED in Global State");
+      return {...state, searchStarted: false, searchFinished: true};
 
     case GET_ALL_BOOKS:
        return  {...state, savedBooks: action.savedBooks};
 
     case CLEAR_RESULTS:
-      return {...state, searchResults: [] };
+      return {...state, searchResults: null };
 
     case SORT_SAVED:
       let newSavedBooks = state.savedBooks;

@@ -10,10 +10,24 @@
     width:100%;
     box-sizing: border-box;
     text-align: center;
+    transition: all .25s;
+    opacity:1;
+    height:110px;
 }
 
+.done {
+    opacity:0;
+    height:0;
+}
 .waiting img {
     height: 160px;
-    width:480px;
+    width:680px;
+    max-width:100%;
 }
 
+
+.noresults {
+    text-align: center;
+    color:white;
+    font-size:1.5em;
+}
