@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Mern Demo",
   "private": true,
+  "homepage": "/googlebooks",
   "proxy": "http://localhost:3001",
   "dependencies": {
     "axios": "^1.10.0",
