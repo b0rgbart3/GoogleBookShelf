@@ -1,12 +1,18 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
+require("dotenv").config();
+mongoose.connect(process.env.MONGO_URI);
+
 // This file empties the Books collection and inserts the books below
 
-mongoose.connect(
-  process.env.MONGODB_URI ||
-  "mongodb://localhost/reactreadinglist"
-);
+// mongoose.connect(
+//   "mongodb+srv://bart2:c0sm0s0nN0va@cluster0.7fjh875.mongodb.net/myDatabase?retryWrites=true&w=majority",
+//   {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   }
+// );
 
 const bookSeed = [
   {

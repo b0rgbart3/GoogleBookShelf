@@ -49,7 +49,7 @@ function SearchBar() {
 
     API.googleBooks(searchRef.current.value)
     .then(results => {
-      console.log("Got results.");
+      // console.log("Got results:", results);
 
       dispatch( { type: FINISHING_SEARCH });
 
@@ -81,7 +81,7 @@ function SearchBar() {
               foundBooks.push(newBook);
           }
         })
-       // console.log(foundBooks);
+       console.log('FOUND:', foundBooks);
        dispatch( { type: SEARCH_RESULTS, value: foundBooks})
     })
     .catch(err => {

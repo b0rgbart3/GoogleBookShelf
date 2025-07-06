@@ -37,6 +37,14 @@ export default {
   },
 
   googleBooks: function(name) {
-    return axios.get("/google/" + name);
+    console.log('BD: name: ', name);
+
+    axios.get("/api/ping")
+  .then(res => console.log(res.data))
+  .catch(err => console.error(err));
+  
+    const books = axios.get("/api/google/" + name);
+    console.log("BDOOKS: ", books);
+    return books;
   }
 };
