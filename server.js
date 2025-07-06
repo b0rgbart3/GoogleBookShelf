@@ -9,6 +9,14 @@ mongoose.connect(process.env.MONGO_URI);
 
 app.use(express.json());
 
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+app.use('/googlebooks', createProxyMiddleware({
+  target: 'http://localhost:8001',
+  changeOrigin: true,
+}));
+
+
 // Ping route
 app.get("/api/ping", (req, res) => {
   console.log("✅ Received /api/ping");
