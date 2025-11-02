@@ -2,11 +2,13 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const path = require('path');
 
 
 require("dotenv").config();
 mongoose.connect(process.env.MONGO_URI);
 
+console.log('MONGO URI: ', process.env.MONGO_URI);
 app.use(express.json());
 
 // Serve the static React build
@@ -29,7 +31,7 @@ app.use((req, res) => {
 
 
 
-const PORT = 8001;
+const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });

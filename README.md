@@ -1,5 +1,5 @@
 # GoogleBookShelf
-Full Stack MERN application to search for books from the Google Book API, and then store them in a Mongo data base.
+GoogleBookShelf is a MERN (MongoDB, Express, React, Node.js) full-stack demo app that lets users search for and save books from the Google Books API. The client runs on React and communicates with a Node/Express API server, which connects to a MongoDB database.
 
 ![screenshot.jpg](screenshot.jpg)
 # Table of contents
@@ -24,7 +24,7 @@ npm start
 ```
 <a name="Live_Demo"></a>
 ## Live Demo
-<a href="https://shielded-crag-85117.herokuapp.com/">Live Demo on Heroku</a>
+<a href="https://googlebooks.bartdority.online/">Live Demo</a>
 
 <a name="Features"></a>
 ## Features
@@ -34,10 +34,12 @@ npm start
 
 <a name="Technology"></a>
 ## Technology
-1.  React
-1.  Express
-2.  NodeJS
-3.  GoogleBooksAPI
+Node.js v16.20.2
+React 16.14.0
+MongoDB Atlas (or local MongoDB)
+Axios
+Mongoose
+GoogleBooks API
 
 <a name="User_Story"></a>
 ## User Story
