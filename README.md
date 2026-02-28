@@ -16,6 +16,7 @@ GoogleBookShelf is a MERN (MongoDB, Express, React, Node.js) full-stack demo app
 ## Installation
 ```sh
 npm install
+
 ```
 <a name="Usage"></a>
 ## Usage
@@ -34,8 +35,9 @@ npm start
 
 <a name="Technology"></a>
 ## Technology
-Node.js v16.20.2
-React 16.14.0
+Node.js v18+
+React 18.3.1
+React Router 6
 MongoDB Atlas (or local MongoDB)
 Axios
 Mongoose

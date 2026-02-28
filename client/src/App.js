@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/navbar"
 import Footer from "./components/footer"
@@ -17,12 +17,12 @@ function App() {
       <div className="stretcher">
         <BookProvider>
           <Navbar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/saved" component={Saved} />
-            <Route component={NoMatch} />
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/saved" element={<Saved />} />
+            <Route path="*" element={<NoMatch />} />
+          </Routes>
           <Footer></Footer>
         </BookProvider>
       </div>
