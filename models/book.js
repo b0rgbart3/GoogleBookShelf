@@ -11,6 +11,7 @@ const bookSchema = new Schema({
   image: String,
   preview: String,
   info: String,
+  ebookLink: String,
   date: { type: Date, default: Date.now }
 });
 

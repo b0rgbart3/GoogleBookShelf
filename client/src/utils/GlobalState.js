@@ -146,7 +146,14 @@ const reducer = (state, action) => {
   };
 
   const BookProvider = ({ value = [], ...props }) => {
-    const [state, dispatch] = useReducer(reducer, {});
+    const [state, dispatch] = useReducer(reducer, {
+      searchStarted: false,
+      searchFinished: false,
+      term: '',
+      savedBooks: [],
+      searchResults: [],
+      sort: ""
+    });
   
     return <Provider value={[state, dispatch]} {...props} />;
   };

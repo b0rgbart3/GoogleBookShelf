@@ -6,6 +6,7 @@ import Footer from "./components/footer"
 
 import { BookProvider } from "./utils/GlobalState";
 import  Home  from './pages/home';
+import Results from './pages/results';
 import Saved  from './pages/saved';
 import NoMatch from "./pages/NoMatch";
 
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/results" element={<Results />} />
             <Route path="/saved" element={<Saved />} />
             <Route path="*" element={<NoMatch />} />
           </Routes>

@@ -108,6 +108,12 @@ function BookCard(props) {
         <p> { book.date? 'date Added:' + moment(book.date).format('YYYY-MM-DD') : ''}</p>
 
 
+        { book.ebookLink &&
+          <a href={book.ebookLink} target="_blank" rel="noreferrer" className="ebookLink">
+            📖 E-Book Available
+          </a>
+        }
+
         <button
           onClick={() => previewBook(book.info)}
           className="bookButton"

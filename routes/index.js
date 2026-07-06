@@ -12,14 +12,13 @@ router.get("/google/:name", (req, res) => {
   // console.log('SENDING REQUEST: ', req);
   
   axios.get("https://www.googleapis.com/books/v1/volumes", {
-    params: { q: req.params.name, maxResults: 40 }
+    params: { q: req.params.name, maxResults: 40, key: process.env.GOOGLE_BOOKS_API_KEY }
   })
   .then(({ data }) => {
-    // console.log(data.items);
     console.log('Received: ', data.items.length,' items.');
     res.json(data.items);
   })
-  .catch(err => res.json(err));
+  .catch(err => res.status(err.response?.status || 500).json(err));
 });
 
 router.route("/books")

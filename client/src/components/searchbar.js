@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import API from "../utils/API";
 import { useBookContext } from "../utils/GlobalState";
 import { SEARCH_RESULTS, CLEAR_RESULTS, STARTING_SEARCH, FINISHING_SEARCH, FINISHED_SEARCH } from "../utils/actions";
@@ -21,6 +22,7 @@ import "./searchbar.css";
 
 function SearchBar() {
   const [state,dispatch] = useBookContext();
+  const navigate = useNavigate();
 
   const searchRef = useRef();
 
@@ -46,6 +48,7 @@ function SearchBar() {
     let term = searchRef.current.value;
 
     dispatch( { type: STARTING_SEARCH, term: term});
+    navigate(`/results?q=${encodeURIComponent(term)}`);
 
     API.googleBooks(searchRef.current.value)
     .then(results => {
@@ -57,7 +60,7 @@ function SearchBar() {
         dispatch( { type: FINISHED_SEARCH });
       }, 500);
 
-    
+
 
       // When we get the results back from Google - let's parse out the data so we only keep
       // the subset of data that we want for our app
@@ -65,10 +68,10 @@ function SearchBar() {
         let foundBooks = [];
         results.data.map( book => {
 
-          // only keep the books that have all the relevant info we need 
+          // only keep the books that have all the relevant info we need
           if (book.volumeInfo && book.volumeInfo.title && book.volumeInfo.authors && book.volumeInfo.description &&
             book.volumeInfo.imageLinks && book.volumeInfo.previewLink && book.volumeInfo.infoLink ) {
-              let newBook =  {    
+              let newBook =  {
               google_id: book.id,
               title: book.volumeInfo.title,
               authors: book.volumeInfo.authors,
@@ -76,12 +79,15 @@ function SearchBar() {
               publishedDate: justTheYear(book.volumeInfo.publishedDate),
               image: book.volumeInfo.imageLinks.thumbnail,
               preview: book.volumeInfo.previewLink,
-              info: book.volumeInfo.infoLink };
+              info: book.volumeInfo.infoLink,
+              ebookLink: book.saleInfo?.isEbook ? book.accessInfo?.webReaderLink : null };
 
               foundBooks.push(newBook);
           }
         })
+       foundBooks.sort((a, b) => (b.ebookLink ? 1 : 0) - (a.ebookLink ? 1 : 0));
        console.log('FOUND:', foundBooks);
+       sessionStorage.setItem(`searchResults_${term}`, JSON.stringify(foundBooks));
        dispatch( { type: SEARCH_RESULTS, value: foundBooks})
     })
     .catch(err => {

@@ -26,6 +26,7 @@ export default {
       image: bookData.image ? bookData.image : "",
       preview: bookData.preview,
       info: bookData.info,
+      ebookLink: bookData.ebookLink || null,
     };
 
     return axios.post("/api/books", newSavedBook);
